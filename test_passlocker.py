@@ -28,14 +28,26 @@ class TestUser(unittest.TestCase):
 
     
     def test_save_multiple_users(self):
-            '''
-            test_save_multiple_users to check if we can save multiple users
-            objects to our user_list
-            '''
-            self.new_user.save_user()
-            test_contact = User("Angela","mutyota","edvSDVr67!") 
-            test_contact.save_user()
-            self.assertEqual(len(User.user_list),2)
+        '''
+        test_save_multiple_users to check if we can save multiple users
+        objects to our user_list
+        '''
+        self.new_user.save_user()
+        test_user = User("Angela","mutyota","edvSDVr67!") 
+        test_user.save_user()
+        self.assertEqual(len(User.user_list),2)
+
+    
+    def test_delete_user(self):
+        '''
+        test_delete_user to test if we can remove a user from our users list
+        '''
+        self.new_user.save_user()
+        test_user = User("Angela","mutyota","edvSDVr67!") 
+        test_user.save_user()
+
+        self.new_user.delete_user()# Deleting a user object
+        self.assertEqual(len(User.user_list),1)
 
     def tearDown(self):
         '''
