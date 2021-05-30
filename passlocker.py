@@ -17,4 +17,6 @@ class User:
         A method that saves a new user to the user list
         """
         User.user_list.append(self)
+
+    
     pass
