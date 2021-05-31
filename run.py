@@ -137,7 +137,7 @@ def passLocker():
                                      EX - Exit the application \n
             """)
             short_code = input().lower().strip()
-            if short_code == "CD":
+            if short_code == "cd":
                 print("Create new details")
                 print("."*20)
                 print("Account name ....")
@@ -162,7 +162,7 @@ def passLocker():
                 print(f"Account details for: {account} - UserName: {username} - Password:{password} created succesfully")
                 print('\n')
             
-            elif short_code == "DD":
+            elif short_code == "dd":
              if display_accounts_details():
                 print("Here's a list of your accounts: ")
                  
@@ -175,7 +175,7 @@ def passLocker():
              else:
                 print("You don't have any details saved yet..........")
 
-            elif short_code == "FD":
+            elif short_code == "fd":
                 print("enter the account you would like to search")
                 search_name = input().lower()
                 if find_detail(search_name):
@@ -188,7 +188,7 @@ def passLocker():
                     print("That Credential does not exist")
                     print('\n')
 
-            elif short_code == "D":
+            elif short_code == "d":
                 print("Enter the account name of the details you want to delete")
                 search_name = input().lower()
                 if find_detail(search_name):
@@ -201,10 +201,11 @@ def passLocker():
                 else:
                     print("That detail you want to delete does not exist in your store yet")
 
-            elif short_code == 'GP':
+            elif short_code == 'gp':
 
                 password = generate_Password()
                 print(f"Hooray! {password} Has been generated succesfully.")
+
             elif short_code == 'ex':
                 print("Thanks for using this app to store your passwords.. See you next time!")
                 break
