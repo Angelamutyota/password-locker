@@ -83,6 +83,64 @@ class TestUserdetails(unittest.TestCase):
         self.new_detail.save_details()
         self.assertEqual(len(user_details.userdetails_list),1)
 
+    def tearDown(self):
+        '''
+        method that does clean up after each test case has run.
+        '''
+        user_details.userdetails_list = []
+
+    def test_save_multiple_accounts(self):
+        '''
+        test to check if we can save multiple userdetail objects to our details list
+        '''
+        self.new_detail.save_details()
+        test_user_details = user_details("Twitter","vivianjep","ydygf657") 
+        test_user_details.save_details()
+        self.assertEqual(len(user_details.userdetails_list),2)
+
+    def test_delete_details(self):
+        """
+        test method to test if we can remove an account's details from our userdetails_list
+        """
+        self.new_detail.save_details()
+        test_user_details = user_details("Twitter","vivianjep","ydygf657")
+        test_user_details.save_details()
+
+        self.new_detail.delete_details()
+        self.assertEqual(len(user_details.userdetails_list),1)
+
+    def test_find_userdetails(self):
+        """
+        test to check if we can find a userdetail entry by account name and display the details
+        """
+        self.new_detail.save_details()
+        test_user_details = user_details("Twitter","vivianjep","ydygf657") 
+        test_user_details.save_details()
+
+        a_detail = user_details.find_detail("Twitter")
+
+        self.assertEqual(a_detail.account,test_user_details.account)
+
+    def test_display_saved_credentials(self):
+        '''
+        method that displays all the credentials that has been saved by the user
+        '''
+
+        self.assertEqual(user_details.display_details(),user_details.userdetails_list)
+
+
+    def test_detail_exist(self):
+        """
+        test to check if we can return a true or false based on whether we find or can't find the detail.
+        """
+        self.new_detail.save_details()
+        test_user_details = user_details("Twitter", "vivianjep", "ydygf657")  
+        test_user_details.save_details()
+        userdetail_is_found = user_details.details_exist("Twitter")
+        self.assertTrue(userdetail_is_found)
+
+
+
 if __name__ == '__main__':
     unittest.main()
 
