@@ -182,7 +182,7 @@ def passLocker():
                     search_detail = find_detail(search_name)
                     print(f"Account Name : {search_detail.account}")
                     print('-' * 50)
-                    print(f"User Name: {search_detail.username} Password :{search_credential.password}")
+                    print(f"User Name: {search_detail.username} Password :{search_detail.password}")
                     print('-' * 50)
                 else:
                     print("That Credential does not exist")
