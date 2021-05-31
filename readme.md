@@ -15,3 +15,22 @@ A user should be able to.... :
 * Copy my credentials to the clipboard
 * Delete stored account details .
 
+## Installation / Setup instruction
+
+To operate the app a user needs to do the following installatons 
+* python3
+* pip
+* pyperclip
+
+#### Cloning
+
+* Open Terminal
+
+* git clone ```https://github.com/Angelamutyota/password-locker.git```
+
+* cd password-locker
+
+* code . or atom . based on the text editor you have.
+
+
+
