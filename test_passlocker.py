@@ -1,5 +1,6 @@
 import unittest
 from passlocker import User
+from passlocker import user_details
 
 class TestUser(unittest.TestCase):
     """
@@ -56,6 +57,31 @@ class TestUser(unittest.TestCase):
         User.user_list = []
 
 
+class TestUserdetails(unittest.TestCase):
+    """
+    A test class that defines test cases for the user_details class
+    """ 
+
+    def setUp(self):
+        """
+        Method that runs before each individual userdetails test methods run.
+        """
+        self.new_detail = user_details('facebook','Angela_mutyota', 'dgdu546!')
+
+    def test_init(self):
+        """
+        Test case to check if a new details instance has been initialized correctly
+        """
+        self.assertEqual(self.new_detail.account,'facebook')
+        self.assertEqual(self.new_detail.username,'Angela_mutyota')
+        self.assertEqual(self.new_detail.password,'dgdu546!')
+
+    def test_save_detail(self):
+        """
+        test case to test if the detail object is saved into the details list.
+        """
+        self.new_detail.save_details()
+        self.assertEqual(len(user_details.userdetails_list),1)
 
 if __name__ == '__main__':
     unittest.main()
