@@ -199,7 +199,7 @@ def passLocker():
                     print(f"Your stored details for : {search_detail.account} successfully deleted!!!")
                     print('\n')
                 else:
-                    print("That Credential you want to delete does not exist in your store yet")
+                    print("That detail you want to delete does not exist in your store yet")
 
             elif short_code == 'GP':
 
@@ -212,7 +212,7 @@ def passLocker():
                 print("Wrong entry... Check your entry again and let it match those in the list")
             
         else:
-          print("Please enter a valid input to continue")
+         print("Please enter a valid input to continue")
 
 if __name__ == '__main__':
     passLocker()
